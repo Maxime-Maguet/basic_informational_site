@@ -1,0 +1,24 @@
+{
+  "name": "basic-informational-site",
+  "version": "1.0.0",
+  "description": "Un serveur Express basique pour servir des pages HTML statiques",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxime-Maguet/basic_informational_site.git"
+  },
+  "keywords": [],
+  "author": "Maxime Maguet",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
