@@ -1,18 +1,19 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
-app.get("/", (req, res) => res.sendFile(path.join(__dirname, "index.html")));
-app.get("/about", (req, res) =>
-  res.sendFile(path.join(__dirname, "about.html")),
-);
-app.get("/contact-me", (req, res) =>
-  res.sendFile(path.join(__dirname, "contact-me.html")),
-);
+
+const { Router } = require("express");
+const authorRouter = require("./routes/authorRouter");
+const bookRouter = require("./routes/bookRouter");
+const indexRouter = require("./routes/indexRouter");
+
+app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
+app.use("/", indexRouter);
 
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "404.html"));
 });
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (error) => {
   // This is important!
